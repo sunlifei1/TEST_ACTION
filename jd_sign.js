@@ -12,7 +12,7 @@ const cookie = process.env.JD_COOKIE
 // 京东Cookie
 const dual_cookie = process.env.JD_DUAL_COOKIE
 // Server酱SCKEY
-const push_key = process.env.PUSH_KEY
+const push_key = 'SCU134573T75a324c1ddd87a6d525f16b336a9759f5fd3417fc905a'
 
 // 京东脚本文件
 const js_url =
@@ -90,8 +90,9 @@ function sendNotificationIfNeed() {
     let desp = '我是详情'
 
     // 去除末尾的换行
-    let SCKEY = push_key.replace(/[\r\n]/g, '')
 
+    // let SCKEY = push_key.replace(/[\r\n]/g, '')
+    let SCKEY = push_key
     const options = {
         uri: `https://sc.ftqq.com/${SCKEY}.send`,
         form: { text, desp },
@@ -118,6 +119,7 @@ function sendNotificationIfNeed() {
 
 function main() {
     sendNotificationIfNeed()
+    return
     if (!cookie) {
         console.log('请配置京东cookie!')
         return
