@@ -76,17 +76,18 @@ function setupCookie() {
 }
 
 function sendNotificationIfNeed() {
-    if (!push_key) {
-        console.log('执行任务结束!')
-        return
-    }
+    // if (!push_key) {
+    //     console.log('执行任务结束!')
+    //     return
+    // }
 
-    if (!fs.existsSync(result_path)) {
-        console.log('没有执行结果，任务中断!')
-    }
+    // if (!fs.existsSync(result_path)) {
+    //     console.log('没有执行结果，任务中断!')
+    // }
 
     let text = '京东签到_' + dateFormat()
-    let desp = fs.readFileSync(result_path, 'utf8')
+    // let desp = fs.readFileSync(result_path, 'utf8')
+    let desp = '我是详情'
 
     // 去除末尾的换行
     let SCKEY = push_key.replace(/[\r\n]/g, '')
